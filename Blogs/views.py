@@ -12,6 +12,7 @@ def read_blogs(request):
         blogsearch = request.GET.get('blogsearch', '')
         # blogsearch is name in input field, while '' is default string.
         # Since '' is substring of every string that is why we used it so that by defualt we get all model objects
+        
         blogs = models.BlogModel.objects.filter(blog_heading__icontains=blogsearch)     # __icontains helps us when complete heading name is not searched but a part of it is
 
     data = {
